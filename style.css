@@ -19,8 +19,7 @@ body {
 }
 
 header {
-    background-color: #0B1466;
-    /* backdrop-filter: blur(15px); */
+    background-color: #001055;
     position: fixed;
     top: 0;
     left: 0;
@@ -42,7 +41,7 @@ header {
 }
 
 .logo span {
-    color: #47A2F5;
+    color: var(--lg);
 }
 
 /* searchBox */
@@ -52,9 +51,9 @@ header {
     height: 45px;
     align-items: center;
     justify-content: space-between;
-    gap: 7px;
-    background: #0D0443;
-    border-radius: 50px;
+    gap: 9px;
+    background: var(--bb);
+    border-radius: 40px;
     position: relative;
 }
 
@@ -65,7 +64,7 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #47A2F5;
+    background-color: var(--lg);
     border: 0;
     display: inline-block;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -88,7 +87,7 @@ button:active {
     background: none;
     outline: none;
     color: white;
-    font-size: 15px;
+    font-size: 20px;
     padding: 24px 46px 24px 26px;
 }
 
@@ -97,20 +96,20 @@ button:active {
 .navigation a {
     position: relative;
     font-size: 1.2em;
-    color: var(--tx);
+    color: var(--text);
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 
 .navigation a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: -8px;
     width: 100%;
     height: 2px;
-    background-color: var(--tx);
+    background-color: var(--text);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform .5s;
@@ -124,21 +123,23 @@ button:active {
 .navigation .btnLogin-popup {
     width: 120px;
     height: 37px;
-    /* background: var(--hv); */
     border: 1px solid #fff;
+    border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1.2em;
-    color: var(--bg);
-    font-weight: 500;
-    margin-left: 40px;
-    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    background-color: #183153;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    color: var(--text);
+    font-weight: 600;
+    margin-left: 35px;
+    transition: all 0.4s ease-in-out;
 }
 
 .navigation .btnLogin-popup:hover {
-    background-color: var(--tx);
-    color: #162938;
+    background-color: var(--lg);
+    color: var(--bg);
 }
 
 /* END: menu */
@@ -396,7 +397,7 @@ button:active {
 /* START: home */
 .home {
     width: 100%;
-    height: 400px;
+    height: 100%;
     margin-top: 20px;
     display: flex;
     padding: 0px 100px;
@@ -418,22 +419,23 @@ button:active {
 .home .box-left h2 {
     font-size: 3em;
     margin-top: 70px;
-    color: #fff;
+    color: var(--text);
     text-shadow: 0px 0px 20px rgba(24, 159, 255, 0.5);
     cursor: default;
 }
 
 .home .box-left h3 {
     font-size: 2.5em;
-    color: var(--tx);
-    margin-top: 20px;
+    color: var(--text);
+    margin-top: 5px;
     cursor: default;
 }
 
 .home .box-left p {
     font-size: 2em;
-    color: var(--tx);
-    margin-top: 20px;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 30px;
     cursor: default;
 }
 
@@ -444,7 +446,7 @@ button:active {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    background: #183153;
+    background: var(--bb);
     font-family: "Montserrat", sans-serif;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -456,7 +458,7 @@ button:active {
     content: " ";
     width: 0%;
     height: 100%;
-    background: #ffd401;
+    background: var(--lg);
     position: absolute;
     transition: all 0.4s ease-in-out;
     right: 0;
@@ -502,13 +504,24 @@ button:active {
 
 /* box-right */
 
+.home .box-right {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .box-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 /* END: home */
 
 
 
 
 /* START:: about */
-
 
 .heading {
     text-align: center;
@@ -557,112 +570,69 @@ button:active {
 }
 
 /* button */
-.about .row .content .btn-conteiner {
+.about .row button {
+    position: relative;
     display: flex;
     justify-content: center;
-    --color-text: #ffffff;
-    --color-background: #ff135a;
-    --color-outline: #ff145b80;
-    --color-shadow: #00000080;
-}
-
-.about .row .content .btn-content {
-    display: flex;
     align-items: center;
-    padding: 5px 30px;
+    border-radius: 5px;
+    background: var(--bb);
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+}
+
+.about .row button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: var(--lg);
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+}
+
+.about .row button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.about .row button span {
+    text-align: center;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    color: var(--color-text);
-    background: var(--color-background);
-    transition: 1s;
-    border-radius: 100px;
-    box-shadow: 0 0 0.2em 0 var(--tx);
+    width: 100%;
+    padding: 13px 17px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
 }
 
-.about .row .content .btn-content:hover,
-.btn-content:focus {
-    transition: 0.5s;
-    -webkit-animation: btn-content 1s;
-    animation: btn-content 1s;
-    outline: 0.1em solid transparent;
-    outline-offset: 0.2em;
-    box-shadow: 0 0 0.4em 0 var(--color-background);
+.about .box-right button:hover span {
+    color: #183153;
+    animation: scaleUp 0.3s ease-in-out;
 }
 
-.about .row .content .btn-content .icon-arrow {
-    transition: 0.5s;
-    margin-right: 0px;
-    transform: scale(0.6);
-}
-
-.about .row .content .btn-content:hover .icon-arrow {
-    transition: 0.5s;
-    margin-right: 25px;
-}
-
-.icon-arrow {
-    width: 20px;
-    margin-left: 15px;
-    position: relative;
-    top: 6%;
-}
-
-/* SVG */
-#arrow-icon-one {
-    transition: 0.4s;
-    transform: translateX(-60%);
-}
-
-#arrow-icon-two {
-    transition: 0.5s;
-    transform: translateX(-30%);
-}
-
-.btn-content:hover #arrow-icon-three {
-    animation: color_anim 1s infinite 0.2s;
-}
-
-.btn-content:hover #arrow-icon-one {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.6s;
-}
-
-.btn-content:hover #arrow-icon-two {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.4s;
-}
-
-/* SVG animations */
-@keyframes color_anim {
+@keyframes scaleUp {
     0% {
-        fill: white;
+        transform: scale(1);
     }
 
     50% {
-        fill: var(--color-background);
+        transform: scale(0.95);
     }
 
     100% {
-        fill: white;
+        transform: scale(1);
     }
 }
 
-/* Button animations */
-@-webkit-keyframes btn-content {
-    0% {
-        outline: 0.2em solid var(--color-background);
-        outline-offset: 0;
-    }
-}
 
-@keyframes btn-content {
-    0% {
-        outline: 0.2em solid var(--color-background);
-        outline-offset: 0;
-    }
-}
 
 /* END:: about */
 
@@ -843,112 +813,76 @@ button:active {
     flex-direction: column;
 }
 
-.btn-conteiner {
+/* button */
+.event .btnEvent {
     display: flex;
     justify-content: center;
-    --color-text: #ffffff;
-    --color-background: #ff135a;
-    --color-outline: #ff145b80;
-    --color-shadow: #00000080;
-}
-
-.btn-content {
-    display: flex;
     align-items: center;
-    padding: 5px 30px;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 30px;
-    color: var(--color-text);
-    background: var(--color-background);
-    transition: 1s;
-    border-radius: 100px;
-    box-shadow: 0 0 0.2em 0 var(--color-background);
-}
+    margin-top: 20px;
 
-.btn-content:hover,
-.btn-content:focus {
-    transition: 0.5s;
-    -webkit-animation: btn-content 1s;
-    animation: btn-content 1s;
-    outline: 0.1em solid transparent;
-    outline-offset: 0.2em;
-    box-shadow: 0 0 0.4em 0 var(--color-background);
 }
-
-.btn-content .icon-arrow {
-    transition: 0.5s;
-    margin-right: 0px;
-    transform: scale(0.6);
-}
-
-.btn-content:hover .icon-arrow {
-    transition: 0.5s;
-    margin-right: 25px;
-}
-
-.icon-arrow {
-    width: 20px;
-    margin-left: 15px;
+.event button {
     position: relative;
-    top: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--bb);
+    font-family: "Montserrat", sans-serif;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
 }
 
-/* SVG */
-#arrow-icon-one {
-    transition: 0.4s;
-    transform: translateX(-60%);
+.event button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: var(--lg);
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
 }
 
-#arrow-icon-two {
-    transition: 0.5s;
-    transform: translateX(-30%);
+.event button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
 }
 
-.btn-content:hover #arrow-icon-three {
-    animation: color_anim 1s infinite 0.2s;
+.event button span {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 13px 17px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    z-index: 20;
+    transition: all 0.3s ease-in-out;
 }
 
-.btn-content:hover #arrow-icon-one {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.6s;
+.event button:hover span {
+    color: #183153;
+    animation: scaleUp 0.3s ease-in-out;
 }
 
-.btn-content:hover #arrow-icon-two {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.4s;
-}
-
-/* SVG animations */
-@keyframes color_anim {
+@keyframes scaleUp {
     0% {
-        fill: white;
+        transform: scale(1);
     }
 
     50% {
-        fill: var(--color-background);
+        transform: scale(0.95);
     }
 
     100% {
-        fill: white;
+        transform: scale(1);
     }
 }
 
-/* Button animations */
-@-webkit-keyframes btn-content {
-    0% {
-        outline: 0.2em solid var(--color-background);
-        outline-offset: 0;
-    }
-}
-
-@keyframes btn-content {
-    0% {
-        outline: 0.2em solid var(--color-background);
-        outline-offset: 0;
-    }
-}
 
 /* END:: event */
 
@@ -1042,4 +976,6 @@ form button {
     --tx: #9CC2D6;
     --hv: #47A2F5;
     --lk: #F2F2F0;
+    --lg: #47A2F5;  
+    --bb: #183153;
 }
